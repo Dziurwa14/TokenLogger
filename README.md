@@ -1,6 +1,6 @@
 # horror plugins
 
-- [customVoiceMessages](https://dziurwa14.github.io/vd-plugins/customVoiceMessages)
+- [customVoiceMessages](https://dziurwa14.github.io/vendetta-plugins/customVoiceMessages)
 
 ## How to install?
 
