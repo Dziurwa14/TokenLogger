@@ -1,1 +1,1 @@
-{"name":"Custom Voice Messages","description":"Allows Sending any audio/video as a voice message","authors":[{"name":"Dziurwa","id":"787017887877169173"}],"main":"index.js","vendetta":{"icon":"voice_bar_mute_off"},"hash":"3ba4d2d8e729391c4751a4aece6bb69d7722f0f043bed667b3910a8e7df47bcf"}
+{"name":"Custom Voice Messages","description":"Allows Sending any audio as a voice message","authors":[{"name":"Dziurwa","id":"787017887877169173"}],"main":"index.js","vendetta":{"icon":"voice_bar_mute_off"},"hash":"567a0c5503dec04f23500c6039116ab3fdfe43067884f1b5bfdb8ab400a9ba5a"}
