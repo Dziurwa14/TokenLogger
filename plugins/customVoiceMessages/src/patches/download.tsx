@@ -5,7 +5,7 @@ import { React } from "@vendetta/metro/common"
 import { Forms } from "@vendetta/ui/components"
 
 const ActionSheet = findByProps("openLazy", "hideActionSheet")
-const Icon = findByName("Icon")
+const Icon = Forms.FormIcon
 const { FormRow } = Forms
 
 export default () => before("openLazy", ActionSheet, (ctx) => {
