@@ -1,6 +1,6 @@
 import { findByProps, findByStoreName } from "@vendetta/metro";
 import { React } from "@vendetta/metro/common";
-import { Button, Forms } from "@vendetta/ui/components";
+import { Button } from "@vendetta/ui/components";
 
 const SpotifyStore = findByStoreName("SpotifyStore");
 const { sync } = findByProps("play", "sync");
