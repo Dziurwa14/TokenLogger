@@ -4,6 +4,7 @@ import { Button } from "@vendetta/ui/components";
 
 const SpotifyStore = findByStoreName("SpotifyStore");
 const { sync } = findByProps("play", "sync");
+const getCurrentUser = findByProps("getCurrentUser").getCurrentUser
 
 export default function ({
     background,
@@ -15,7 +16,7 @@ export default function ({
     user: { id: string };
 }) {
     const swith = SpotifyStore.getSyncingWith();
-    if (swith?.userId === user.id) return <></>;
+    if (swith?.userId == user.id || getCurrentUser().id) return <></>;
 
     return (
         <Button
