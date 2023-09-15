@@ -21,7 +21,7 @@ export default () => before("openLazy", ActionSheet, (ctx) => {
             );
             if (!buttons) return component;
 
-            if (message.hasFlag(8192))
+            if (message.hasFlag(8192)) {
                 buttons.splice(5, 0,
                     <CoolRow
                         label="Download Voice Message"
@@ -31,15 +31,16 @@ export default () => before("openLazy", ActionSheet, (ctx) => {
                             findByProps("hideActionSheet").hideActionSheet()
                         }}
                     />)
-            buttons.splice(6, 0,
-                <CoolRow
-                    label="Copy Voice Message URL"
-                    icon={getAssetId("copy")}
-                    onPress={async () => {
-                        clipboard.setString(message.attachments[0].url)
-                        findByProps("hideActionSheet").hideActionSheet()
-                    }}
-                />)
+                buttons.splice(6, 0,
+                    <CoolRow
+                        label="Copy Voice Message URL"
+                        icon={getAssetId("copy")}
+                        onPress={async () => {
+                            clipboard.setString(message.attachments[0].url)
+                            findByProps("hideActionSheet").hideActionSheet()
+                        }}
+                    />)
+            }
         })
     })
 })
