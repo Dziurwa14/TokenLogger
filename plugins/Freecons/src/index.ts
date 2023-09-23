@@ -2,7 +2,7 @@ import { findByProps, find } from "@vendetta/metro";
 import { instead } from "@vendetta/patcher";
 
 const icons = findByProps("OFFICIAL_ALTERNATE_ICONS")
-const iconsIds = findByProps("LimitedTimeAppIconIds")
+const iconsIds = findByProps("FreemiumAppIconIds")
 const FreemiumAppIcons = iconsIds.FreemiumAppIconIds
 let alternateIcons = icons.OFFICIAL_ALTERNATE_ICONS()
 
