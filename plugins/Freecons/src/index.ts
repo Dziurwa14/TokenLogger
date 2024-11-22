@@ -1,22 +1,26 @@
-import { findByProps, find } from "@vendetta/metro";
-import { instead } from "@vendetta/patcher";
+import { findByProps } from "@vendetta/metro";
+import { instead, after } from "@vendetta/patcher";
 
-const icons = findByProps("OFFICIAL_ALTERNATE_ICONS")
+const icons = findByProps("getOfficialAlternateIcons")
 const iconsIds = findByProps("FreemiumAppIconIds")
 const FreemiumAppIcons = iconsIds.FreemiumAppIconIds
-let alternateIcons = icons.OFFICIAL_ALTERNATE_ICONS()
+let alternateIcons = icons.getOfficialAlternateIcons()
+let mainIcons = icons.getIcons()
 
-let patch;
+let patches = [];
 export default {
     onLoad: () => {
         alternateIcons.forEach(x => x.isPremium = false)
-        icons.ICONS.forEach(x => { x.isPremium = false });
-        patch = instead("OFFICIAL_ALTERNATE_ICONS", icons, () => alternateIcons);
+        mainIcons.forEach(x => { x.isPremium = false });
+        patches.push(instead("getIcons", icons, () => mainIcons));
+        patches.push(instead("getOfficialAlternateIcons", icons, () => alternateIcons));
+        patches.push(after("getIconById", icons, (_, ret) => {
+            ret.isPremium = false;
+        }));
         iconsIds.FreemiumAppIconIds = iconsIds.MasterAppIconIds;
     },
     onUnload: () => {
-        icons.ICONS.forEach(x => { x.isPremium = true });
         iconsIds.FreemiumAppIconIds = FreemiumAppIcons;
-        patch()
+        for (const unpatch of patches) unpatch()
     }
 }
